@@ -1,7 +1,0 @@
-C:/Users/anton/CLionProjects/StressSystem/cmake-build-debug/CMakeFiles/Main.dir
-C:/Users/anton/CLionProjects/StressSystem/cmake-build-debug/CMakeFiles/Generator.dir
-C:/Users/anton/CLionProjects/StressSystem/cmake-build-debug/CMakeFiles/Solution.dir
-C:/Users/anton/CLionProjects/StressSystem/cmake-build-debug/CMakeFiles/Checker.dir
-C:/Users/anton/CLionProjects/StressSystem/cmake-build-debug/CMakeFiles/Launcher.dir
-C:/Users/anton/CLionProjects/StressSystem/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/anton/CLionProjects/StressSystem/cmake-build-debug/CMakeFiles/rebuild_cache.dir
