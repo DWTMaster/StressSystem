@@ -1,12 +1,7 @@
-#define _GLIBCXX_DEBUG
-
 #include <bits/stdc++.h>
 #include "randobjects.hpp"
 
 using namespace std;
-typedef long long ll;
-typedef long double ld;
-typedef __int128 LL;
 #define all(x) (x).begin(), (x).end()
 
 
@@ -27,7 +22,6 @@ ostream &operator<<(ostream &out, const vector<T> &vec) {
 
 int main(int argc, char *argv[]) {
 #ifdef STRESS
-    // The only argument is output file path
     freopen(argv[1], "w", stdout);
 #endif
 
