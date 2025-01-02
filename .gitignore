@@ -2,3 +2,4 @@
 cmake-build-debug
 StressTesting/Tests/*
 !StressTesting/Tests
+!StressTesting/Tests/readme.txt
