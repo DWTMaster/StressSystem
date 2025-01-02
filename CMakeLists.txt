@@ -5,7 +5,10 @@ set(CMAKE_CXX_STANDARD 26)
 
 add_executable(Main main.cpp)
 
+
 # StressTesting
+
+
 add_executable(Generator StressTesting/randobjects.hpp StressTesting/generator.cpp)
 add_executable(Solution StressTesting/solution.cpp)
 add_executable(Checker StressTesting/checker.cpp)

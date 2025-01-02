@@ -1,34 +1,13 @@
-#define _GLIBCXX_DEBUG
-#define debug(x) cerr << __LINE__ << ": " << (#x) << " = " << (x) << endl
-
 #include <bits/stdc++.h>
 
 using namespace std;
-typedef long long ll;
-typedef long double ld;
-typedef __int128 LL;
-#define all(x) (x).begin(), (x).end()
-
-template<typename T>
-istream& operator >>(istream& in, vector<T>& a) {
-    for (auto& i : a)
-        in >> i;
-    return in;
-}
-
-template<typename T>
-ostream& operator <<(ostream& out, const vector<T>& a) {
-    for (const auto& i : a)
-        out << i << ' ';
-    return out;
-}
-
 
 // Input data
+long long n;
 
 int check(const string &tsol_path, const string &rsol_path) {
     // There is scanned data
-    ll sol_res, res;
+    long long sol_res, res;
 
     ifstream testing_solution(tsol_path);
 #define cin testing_solution
@@ -77,6 +56,7 @@ int main(int argc, char *argv[]) {
 
     {
         // There you can scan input data if it's necessary
+        cin >> n;
     }
 
     return check(argv[3], argv[4]);
