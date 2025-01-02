@@ -3,7 +3,7 @@ project(TestProject)
 
 set(CMAKE_CXX_STANDARD 26)
 
-add_executable(Main main.cpp)
+add_executable(Main testing_solution.cpp)
 
 
 # StressTesting
