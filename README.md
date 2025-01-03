@@ -1,4 +1,4 @@
-<h1 align="center"> Stress system for Olympiad programming (for CLion users)</h1>
+<h1 align="center"> Stress system for Olympiade programming (for CLion users)</h1>
 
 The system implemented in this project allows you to quickly generate random tests and compare two solutions on them. It's able to catch errors such as: Wrong answer, Runtime error and Time limit exceeded
 
