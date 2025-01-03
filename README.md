@@ -8,7 +8,7 @@ The system implemented in this project allows you to quickly generate random tes
 1) Copy the folder "StressTesting" to your project <br/>
 2) Add to your CMakeLists the lines from this CMake come after the comment <br/>
 
-<h1 allign="left"> Ussage </h1>
+<h1 allign="left"> Usage </h1>
 1) In the file "StressTesting/launcher.cpp" set the "solution_exe" constant to the name of exe solution you want to test <br/>
 2) Write a right solution in the file "StressTesting/solution.cpp" <br/>
 3) In right and testing solution in main() add lines "#ifdef STRESS...#endif" as shown in the project <br/>
