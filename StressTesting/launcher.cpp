@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <chrono>
 #include <iostream>
 
 constexpr int TIME_LIMIT = 500; // milliseconds
@@ -72,7 +73,8 @@ std::string create_test(const int &test) {
     const std::string tsol_output_path = test_folder + "\\Output\\TestingSolution.txt";
     const std::string rsol_output_path = test_folder + "\\Output\\RightSolution.txt";
     const std::string report_path = test_folder + "\\Report.txt";
-    {
+
+    std::chrono::time_point<std::chrono::high_resolution_clock> tsol_begin, tsol_end; {
         // Generator launch
         std::ofstream input(input_path);
         const std::string generator_exe_path = fs::current_path().string() + "\\Generator.exe";
@@ -85,7 +87,9 @@ std::string create_test(const int &test) {
         // Testing solution launch
         std::ofstream tsol_output(tsol_output_path);
         const std::string tsol_exe_path = fs::current_path().string() + "\\" + solution_exe;
+        tsol_begin = std::chrono::high_resolution_clock::now();
         const std::string verdict = launch_program(tsol_exe_path, {input_path, tsol_output_path});
+        tsol_end = std::chrono::high_resolution_clock::now();
         if (verdict != "OK") { return verdict; }
     } {
         // Right solution launch
@@ -112,6 +116,12 @@ std::string create_test(const int &test) {
         if (verdict != "OK") {
             std::cerr << "Report launch failed!";
             exit(-1);
+        } {
+            // Writing executable time
+            std::chrono::duration<double, std::milli> executable_time = tsol_end - tsol_begin;
+            std::ofstream out(report_path, std::ios::app);
+            out << std::fixed << std::setprecision(3);
+            out << "Executable time: " << executable_time.count() / 1000 << " sec\n";
         }
         return "OK";
     }
@@ -127,7 +137,8 @@ void print_from_file(const std::string &filepath) {
 }
 
 void print_test_info(const int &test) {
-    const std::string test_folder = fs::current_path().parent_path().string() + R"(\StressTesting\Tests\Test_)" + std::to_string(test);
+    const std::string test_folder = fs::current_path().parent_path().string() + R"(\StressTesting\Tests\Test_)" +
+                                    std::to_string(test);
     std::cout << "---------------Input---------------\n";
     print_from_file(test_folder + "\\Input.txt");
     std::cout << "------Testing solution output------\n";
