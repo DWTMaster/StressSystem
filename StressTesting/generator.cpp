@@ -22,7 +22,9 @@ ostream &operator<<(ostream &out, const vector<T> &vec) {
 
 int main(int argc, char *argv[]) {
 #ifdef STRESS
-    freopen(argv[1], "w", stdout);
+    if (argc == 2) {
+        freopen(argv[1], "w", stdout);
+    }
 #endif
 
     {

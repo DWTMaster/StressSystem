@@ -4,8 +4,10 @@ using namespace std;
 
 int main(int argc, char *argv[]) {
 #ifdef STRESS
-    freopen(argv[1], "r", stdin);
-    freopen(argv[2], "w", stdout);
+    if (argc == 3) {
+        freopen(argv[1], "r", stdin);
+        freopen(argv[2], "w", stdout);
+    }
 #endif
 
     ios::sync_with_stdio(false);

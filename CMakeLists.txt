@@ -14,6 +14,7 @@ add_executable(Solution StressTesting/solution.cpp)
 add_executable(Checker StressTesting/checker.cpp)
 add_executable(Launcher StressTesting/launcher.cpp)
 
+add_compile_definitions(Main PRIVATE STRESS)
 add_dependencies(Launcher Generator)
 target_compile_definitions(Generator PRIVATE STRESS)
 add_dependencies(Launcher Solution)
